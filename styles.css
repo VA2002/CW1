@@ -1,0 +1,26 @@
+.Navigation {
+    background-color: rgb(42, 70, 121);
+    width: 101.5%;
+    height: 20%;
+    margin-left: -1%;
+    margin-top: -0.8%;
+    box-shadow: 3px 3px 3px black;
+    z-index: 20;
+    position: fixed;
+  }
+  
+  .Navlink {
+    text-decoration: none;
+    color: white;
+    font-family: "Bahnschrift Semibold";
+    font-size: 18px;
+  }
+  
+  
+  #Websitelogo {
+    width: 20%;
+    height: 100%;
+    margin-top: -7.4%;
+    margin-left: 1%;
+  }
+  

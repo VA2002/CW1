@@ -18,6 +18,7 @@
     ></script>
   </head>
   <body>
+    <!--Within this App div, everything we want to display in our Vue App will be shown-->
     <div id="App">
       <!--The elements in this div will be displayed only if the conditions in the v-if are met-->
       <div v-if="showProductPage & !showCartPage & !showCheckoutPage">
@@ -282,7 +283,7 @@
                 <input
                   id="Cardnumber"
                   type="number"
-                  placeholder="Card Number*"
+                  placeholder="Credit/Debit Card Number*"
                   v-model.number="submission.cardno"
                   required
                 />
@@ -316,10 +317,11 @@
         </div>
       </div>
     </div>
+    <!--Data that will be loaded on the Vue app-->
     <script src="lessons.js"></script>
     <script type="text/javascript">
-       //Introducing the VueJS App
-       const AfterSchool = new Vue({
+    //Introducing the VueJS App
+      const AfterSchool = new Vue({
         //Adressing DOM element where Vue mounts the application
         el: "#App",
         //Vue JS Object Data

@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!--Title-->
     <title>Strawgoh | After School Classes Portal</title>
+    <!--Connecting to CSS-->
     <link rel="stylesheet" href="styles.css" />
+    <!--Vue JS CDN-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <!--Font Awesome CDN-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -22,9 +26,11 @@
     <div id="App">
       <!--The elements in this div will be displayed only if the conditions in the v-if are met-->
       <div v-if="showProductPage & !showCartPage & !showCheckoutPage">
+        <!--Landing page featuring all the lessons/classes-->
         <div id="Home">
           <div class="Navigation">
             &nbsp;&nbsp;
+            <!--Cart button with a disabled condition if the cart is empty-->
             <button
               id="Cart"
               @click="showTheCartPage"
@@ -37,11 +43,13 @@
           </div>
           <br />
           <br />
+          <!--This contains all the filters-->
           <div class="Sortbox">
             <br />
             <center>
               <h1 id="Sortby">Sort by :</h1>
               <br /><br />
+              <!--@click added to buttons to define the function they have-->
               <div id="Filters">
                 Subject:
                 <button class="Ascdesc" id="Nameup" @click="nameAsc">
@@ -86,14 +94,18 @@
             </center>
           </div>
           <br />
+          <!--Search bar added along with a v-model, which is to equate the string within the search bar to the searchTerm variable-->
           <input
             type="text"
             id="Search"
             placeholder="Search Subject Name, Code, Location or Teacher Here..."
             v-model="searchTerm"
           />
+          <!--This div includes all the classes-->
           <div class="Theclasses">
             <table id="Classtable" cellspacing="15">
+              <!--VFor added here which loops through all elements of classes array. VIf added to add a new row everytime 3 classes are added to each row-->
+              <!--Mustache syntax used to call object properties-->
               <tr v-for="(classItem, index) in classes" v-if="index % 3 === 0">
                 <td v-for="i in 3" v-if="(index + i - 1) < classes.length">
                   <div class="Subjectbox">
@@ -119,6 +131,7 @@
                       <br />
                     </div>
                     <br />
+                    <!--Add to cart button for each class. The function given to it has classes index specified to specify the class to execute the function on-->
                     <button
                       class="Addtocart"
                       :id="classes[index + i -1].name"
@@ -137,25 +150,32 @@
       </div>
       <!--The elements in this div will be displayed only if the conditions in the v-if are met-->
       <div v-if="!showProductPage & showCartPage & !showCheckoutPage">
+        <!--Cart section-->
         <div id="Cartpage">
           <br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!--Go back to product page-->
           <i
             @click="showTheCartPage"
             id="Back"
             class="fa-solid fa-arrow-left"
           ></i>
           <br />
+          <!--Includes all added items-->
           <div class="Cartitems">
             <br />
             <center>
               <h1>Your Cart</h1>
             </center>
+            <!--If cart array is not empty-->
             <div v-if="cart.length > 0">
+                <!--Looping through cart array to display cart items-->
               <div v-for="(cartItem, index) in cart" class="CartItem">
+                  <!--Delete button for the particular class-->
                 <button class="Delete" @click="deleteFromCart(index)">
                   <i id="Trash" class="fa-solid fa-trash"></i>
                 </button>
+                <!--The div for each class stored in cart-->
                 <div class="Classesincart">
                   <br />
                   <div class="Cartsubject">
@@ -181,13 +201,14 @@
                   </div>
                   <div class="Cartprice">
                     &nbsp;&nbsp;&nbsp;&nbsp;<b>Price:</b> £
-                    {{ cartItem.price * cartItem.cartqty }}
+                    {{ cartItem.price * cartItem.cartqty }}   <!--Finds the total price of a class by multiplying fee per class and quantity in cart-->
                   </div>
                   <br />
                 </div>
                 <br />
               </div>
             </div>
+            <!--If the cart is empty, meaning everything is deleted from cart-->
             <div v-else>
               <br /><br />
               <center>
@@ -206,8 +227,10 @@
           &nbsp;&nbsp;
           <b>To be paid&nbsp;:</b>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!--Total amount to be paid for all items in cart, calculated from a function in computed-->
           £ {{ totalAmt }} <br /><br /><br /><br />
           <center>
+            <!--Directs user to checkout page, disabled if cart is empty-->
             <button
               id="Checkoutbutton"
               @click="showTheCheckoutPage"
@@ -222,6 +245,7 @@
       <div v-if="!showProductPage & !showCartPage & showCheckoutPage">
         <div id="Checkoutpage">
           &nbsp;&nbsp;&nbsp;
+          <!--Back to cart page-->
           <i
             @click="showTheCheckoutPage"
             id="Back"
@@ -229,11 +253,13 @@
           ></i>
           <br />
           <center>
+            <!--Box for form where user details are asked-->
             <div class="Theform">
               <br />
               <h1>Enter Your Details</h1>
               <br />
               <form>
+                <!--Here, v-model.trim is used to remove unnecesary space from front and back, and v-model.number ensures that input is numeric in nature-->
                 <input
                   id="FName"
                   type="text"
@@ -305,6 +331,7 @@
                 />
                 <br /><br /><br />
               </form>
+              <!--Submit button which is disabled if required areas are left empties-->
               <button
                 id="Submitform"
                 @click="submitTheForm"
@@ -482,6 +509,8 @@
             }
           }
         },
+        //Triggered after vue component is set up but before it comes on screen
+        //This is done for instantaneous loading of classes
         created() {
           this.fetchClasses();
         },

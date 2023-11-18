@@ -1,3 +1,4 @@
+//All lessons objects stored in classes array
 var classes = [
     {
       id: 0,

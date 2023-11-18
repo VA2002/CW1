@@ -84,40 +84,84 @@
         </div>
         <br />
         <input
-        type="text"
-        id="Search"
-        placeholder="Search Subject Name, Code, Location or Teacher Here..."
-        v-model="searchTerm"
-      />
+          type="text"
+          id="Search"
+          placeholder="Search Subject Name, Code, Location or Teacher Here..."
+          v-model="searchTerm"
+        />
+        <div class="Theclasses">
+            <table id="Classtable" cellspacing="15">
+              <tr v-for="(classItem, index) in classes" v-if="index % 3 === 0">
+                <td v-for="i in 3" v-if="(index + i - 1) < classes.length">
+                  <div class="Subjectbox">
+                    <div id="Subjectname">
+                      {{ classes[index + i - 1].code }}:
+                      {{ classes[index + i - 1].name }}
+                    </div>
+                    <div v-html="classes[index + i - 1].fontawsm"></div>
+                    <div id="Subjectinfo">
+                      <b>Location: </b> {{ classes[index + i - 1].location }}
+                      <br />
+                      <b>Fee: </b> £ {{ classes[index + i - 1].price }}
+                      <br />
+                      <b>Teacher: </b> {{ classes[index + i - 1].teacher }}
+                      <br />
+                      <b>Space: </b>
+                      <span v-if="classes[index + i -1].space > 0">{{
+                        classes[index + i - 1].space
+                      }}</span>
+                      <span style="color: rgb(158, 32, 32);" v-else
+                        >Unavailable</span
+                      >
+                      <br />
+                    </div>
+                    <br />
+                    <button
+                      class="Addtocart"
+                      :id="classes[index + i -1].name"
+                      @click="addToCart(classes[index + i - 1])"
+                      :disabled="classes[index + i -1].space == 0"
+                    >
+                      <i class="fa-solid fa-cart-plus"></i> Add To Cart
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <br />
       </div>
       <div id="Cartpage"></div>
       <div id="Checkoutpage"></div>
     </div>
     <script src="lessons.js"></script>
-    <script type = "text/javascript">
-        const AfterSchool = new Vue({
-        el: "#app",
+    <script type="text/javascript">
+      const AfterSchool = new Vue({
+        el: "#App",
         data: {
-          sitename: "Subject",
-          classes,
+          sitename: "Strawgoh | After School Classes Portal",
+          classes: [],
           cart: []
         },
         methods: {
-          addToCart() {
+          addToCart(classItem) {
             console.log("Test");
-            this.cart.push(this.product.id);
-          },
-          showCheckout() {
-            this.showProduct = this.showProduct ? false : true;
-            console.log(this.showProduct);
+            this.cart.push(classItem.code);
           }
+        },
+        created() {
+          this.fetchClasses();
         },
         computed: {
           cartItemCount: function() {
             return this.cart.length;
-          },
-          canAddToCart: function() {
-            return this.product.availableInventory > this.cartItemCount;
+          }
+        },
+        methods: {
+          fetchClasses() {
+            if (typeof classes !== "undefined") {
+              this.classes = classes;
+            }
           }
         }
       });

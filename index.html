@@ -211,7 +211,101 @@
           </button>
         </center>
       </div>
-      <div id="Checkoutpage"></div>
+      <div id="Checkoutpage">
+        &nbsp;&nbsp;&nbsp;
+        <i
+          @click="showTheCheckoutPage"
+          id="Back"
+          class="fa-solid fa-arrow-left"
+        ></i>
+        <br />
+        <center>
+          <div class="Theform">
+            <br />
+            <h1>Enter Your Details</h1>
+            <br />
+            <form>
+              <input
+                id="FName"
+                type="text"
+                placeholder="First Name (Student)*"
+                v-model.trim="submission.fname"
+                required
+              />
+              <input
+                id="MName"
+                type="text"
+                placeholder="Middle Name (Student)"
+                v-model.trim="submission.mname"
+              />
+              <input
+                id="LName"
+                type="text"
+                placeholder="Last Name (Student)*"
+                v-model.trim="submission.lname"
+                required
+              />
+              <br /><br />
+              <input
+                id="StudentID"
+                type="text"
+                placeholder="Student ID (SHSXXXXXX)*"
+                v-model.trim="submission.studentid"
+                required
+              />
+              <br /><br />
+              <input
+                id="Phone"
+                type="number"
+                placeholder="Phone*"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                v-model.number="submission.phone"
+                required
+              />
+              <br /><br />
+              <input
+                id="Email"
+                type="email"
+                placeholder="Student Email Address*"
+                v-model.trim="submission.email"
+                required
+              />
+              <br /><br />
+              <input
+                id="Cardnumber"
+                type="number"
+                placeholder="Card Number*"
+                v-model.number="submission.cardno"
+                required
+              />
+              <input
+                id="CardCVV"
+                type="number"
+                placeholder="CVV*"
+                v-model.number="submission.cvv"
+                required
+              />
+              <br /><br />
+              Card Expiration Date:
+              <input
+                id="Cardexpiry"
+                type="date"
+                placeholder="Expiration Date*"
+                v-model="submission.cardexp"
+                required
+              />
+              <br /><br /><br />
+            </form>
+            <button
+              id="Submitform"
+              @click="submitTheForm"
+              :disabled="submission.fname == '' || submission.lname == '' || submission.studentid == '' || submission.phone == '' || submission.email == '' || submission.cardno == '' || submission.cardexp == '' || submission.cvv == ''"
+            >
+              Submit
+            </button>
+          </div>
+        </center>
+      </div>
     </div>
     <script src="lessons.js"></script>
     <script type="text/javascript">

@@ -317,3 +317,91 @@
   height: 50px;
   margin-top: -2%; 
 }
+#Checkoutbutton:hover {
+    background-color: rgb(133, 102, 24);
+    color: rgb(250, 222, 62);
+    border-color: rgb(250, 222, 62);
+    box-shadow: 2px 2px 15px rgb(255, 232, 103);
+    transition: 0.3s;
+  }
+  
+  #Checkoutbutton:disabled {
+      cursor: not-allowed;
+      opacity: 80%;
+      background-color: rgb(185, 185, 185);
+      filter: brightness(80%);
+  }
+  
+  #Checkoutpage {
+    height: 625px;
+    width: 101.5%;
+    background-image: linear-gradient(to bottom right, rgb(27, 81, 180), rgb(102, 149, 238));
+    margin-left: -1%;
+    margin-top: -0.3%;
+    z-index: 18;
+    /* animation: fadeintwo 1s; */
+  }
+  
+  .Theform {
+      overflow: auto;
+      font-family: "Bahnschrift";
+      background-color: white;
+      margin-top: 3%;
+      margin-left: 2%;
+      width: 70%;
+      height: 530px;
+      border-radius: 16px;
+      box-shadow: 1px 1px 5px black;
+  }
+  
+  #FName, #MName, #LName {
+    background-color: rgb(241, 241, 241);
+    height: 38px;
+    border-style: none;
+    font-family: 'Courier New', Courier, monospace;
+    width: 24.6%;
+  }
+  
+  #Cardnumber, #Cardexpiry, #CardCVV {
+    background-color: rgb(241, 241, 241);
+    height: 38px;
+    border-style: none;
+    font-family: 'Courier New', Courier, monospace;
+    width: 37%;
+  }
+  
+  #StudentID, #Phone, #Email {
+    background-color: rgb(241, 241, 241);
+    height: 38px;
+    border-style: none;
+    font-family: 'Courier New', Courier, monospace;
+    width: 75%;
+  }
+  
+  #Submitform {
+    width: 30%;
+    height: 37px;
+    background-color: rgb(57, 92, 207);
+    border-color: rgb(24, 46, 121);
+    border-style: solid;
+    border-width: 3.5px;
+    font-family: "Bahnschrift";
+    color: white;
+    font-size: 20px;
+    margin-top: -1.5%;
+  }
+  
+  #Submitform:hover {
+    background-color: white;
+    color: rgb(24, 46, 121);
+    border-color: rgb(24, 46, 121);
+    transition: 0.5s;
+  }
+  
+  #Submitform:disabled {
+    cursor: not-allowed;
+    /* opacity: 80%; */
+    background-color: rgb(185, 185, 185);
+    filter: brightness(80%);
+    border-color: gray;
+  }

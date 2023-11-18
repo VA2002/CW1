@@ -140,13 +140,28 @@
         el: "#App",
         data: {
           sitename: "Strawgoh | After School Classes Portal",
-          classes: [],
+          classes,
           cart: []
         },
         methods: {
           addToCart(classItem) {
             console.log("Test");
-            this.cart.push(classItem.code);
+            this.cart.push(classItem);
+          },
+          showCart(){
+            console.log("Testing showCart");
+            document.getElementById("Black").style.display = "Block";
+            document.getElementById("Thecart").style.display = "Block";
+          },
+          hideCart(){
+            console.log("Testing hideCart");
+            document.getElementById("Black").style.display = "None";
+            document.getElementById("Thecart").style.display = "None";
+          },
+          fetchClasses() {
+            if (typeof classes !== 'undefined') {
+              this.classes = classes;
+            }
           }
         },
         created() {
@@ -155,13 +170,6 @@
         computed: {
           cartItemCount: function() {
             return this.cart.length;
-          }
-        },
-        methods: {
-          fetchClasses() {
-            if (typeof classes !== "undefined") {
-              this.classes = classes;
-            }
           }
         }
       });

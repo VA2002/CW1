@@ -53,5 +53,38 @@ var classes = [
     space: 5,
     cartqty: 0,
     fontawsm: `<i id = "Subjecticon" class="fa-solid fa-person-swimming"></i>`
+  },
+  {
+    id: 3,
+    code: "AS151",
+    name: "Chemistry",
+    location: "London",
+    price: 100,
+    teacher: "Walter White",
+    space: 5,
+    cartqty: 0,
+    fontawsm: `<i id="Subjecticon" class="fa-solid fa-flask-vial"></i>`
+  },
+  {
+    id: 4,
+    code: "AS303",
+    name: "Mathematics",
+    location: "Bristol",
+    price: 100,
+    teacher: "Aryabhatta B",
+    space: 5,
+    cartqty: 0,
+    fontawsm: `<i id="Subjecticon" class="fa-solid fa-calculator"></i>`
+  },
+  {
+    id: 5,
+    code: "AS339",
+    name: "Geography",
+    location: "York",
+    price: 80,
+    teacher: "Hermione Granger",
+    space: 5,
+    cartqty: 0,
+    fontawsm: `<i id="Subjecticon" class="fa-solid fa-earth-americas"></i>`
   }
 ];

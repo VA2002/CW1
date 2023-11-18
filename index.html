@@ -93,5 +93,34 @@
       <div id="Cartpage"></div>
       <div id="Checkoutpage"></div>
     </div>
+    <script src="lessons.js"></script>
+    <script type = "text/javascript">
+        const AfterSchool = new Vue({
+        el: "#app",
+        data: {
+          sitename: "Subject",
+          classes,
+          cart: []
+        },
+        methods: {
+          addToCart() {
+            console.log("Test");
+            this.cart.push(this.product.id);
+          },
+          showCheckout() {
+            this.showProduct = this.showProduct ? false : true;
+            console.log(this.showProduct);
+          }
+        },
+        computed: {
+          cartItemCount: function() {
+            return this.cart.length;
+          },
+          canAddToCart: function() {
+            return this.product.availableInventory > this.cartItemCount;
+          }
+        }
+      });
+    </script>
   </body>
 </html>

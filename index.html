@@ -158,6 +158,36 @@
             document.getElementById("Black").style.display = "None";
             document.getElementById("Thecart").style.display = "None";
           },
+          nameAsc() {
+            this.classes.sort((a, b) => a.name.localeCompare(b.name));
+          },
+          nameDesc() {
+            this.classes.sort((a, b) => b.name.localeCompare(a.name));
+          },
+          locationAsc() {
+            this.classes.sort((a, b) => a.location.localeCompare(b.location));
+          },
+          locationDesc() {
+            this.classes.sort((a, b) => b.location.localeCompare(a.location));
+          },
+          priceAsc() {
+            this.classes.sort((a, b) => a.price - b.price);
+          },
+          priceDesc() {
+            this.classes.sort((a, b) => b.price - a.price);
+          },
+          teacherAsc() {
+            this.classes.sort((a, b) => a.teacher.localeCompare(b.teacher));
+          },
+          teacherDesc() {
+            this.classes.sort((a, b) => b.teacher.localeCompare(a.teacher));
+          },
+          spaceAsc() {
+            this.classes.sort((a, b) => a.space - b.space);
+          },
+          spaceDesc() {
+            this.classes.sort((a, b) => b.space - a.space);
+          },
           fetchClasses() {
             if (typeof classes !== 'undefined') {
               this.classes = classes;

@@ -24,3 +24,78 @@
     margin-left: 1%;
   }
   
+  #Cart {
+    margin-top: 2.7%;
+    margin-left: 90%;
+    width: 5%;
+    height: 48%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(18, 146, 221);
+    border-color: rgb(18, 146, 221);
+    font-size: 30px;
+    border-radius: 40px;
+    border-width: 2px;
+    border-style: solid;
+    cursor: pointer;
+  }
+  
+  /* #Cartbutton {
+      width: 5%;
+      height: 48%;
+      font-size: 30px;
+      border-radius: 40px;
+      margin-left: 90%;
+      margin-top: -30%;
+      background-color: rgb(255, 255, 255);
+      color: rgb(18, 146, 221);
+      border-color: rgb(18, 146, 221);
+      border-width: 2px;
+      border-style: solid;
+      cursor: pointer;
+  } */
+  
+  #Cart:hover {
+    background-color: rgb(18, 146, 221);
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 20px white;
+    transition: 0.4s;
+  }
+  
+  #Cart:disabled {
+    cursor: not-allowed;
+    opacity: 80%;
+    background-color: rgb(185, 185, 185);
+    filter: brightness(80%);
+  }
+
+  .Sortbox {
+    background-color: rgb(245, 245, 245);
+    width: 20%;
+    height: 480px;
+    margin-top: 7%;
+    margin-left: 0%;
+    font-family: "bahnschrift semibold";
+    position: fixed;
+  }
+  
+  #Sortby {
+    font-family: "bahnschrift";
+  }
+  
+  .Ascdesc {
+    background-color: rgb(38, 105, 182);
+    color: white;
+    font-size: 12px;
+    width: 12%;
+    height: 10%;
+    border-color: white;
+    border-radius: 40px;
+  }
+  
+  .Ascdesc:hover {
+    color: rgb(38, 105, 182);
+    background-color: white;
+    border-color: rgb(38, 105, 182);
+    transition: 0.3s;
+  }

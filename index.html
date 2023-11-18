@@ -32,6 +32,57 @@
           <br />
           <img id="Websitelogo" src="thelogo.png" />
         </div>
+        <br />
+        <br />
+        <div class="Sortbox">
+          <br />
+          <center>
+            <h1 id="Sortby">Sort by :</h1>
+            <br /><br />
+            <div id="Filters">
+              Subject:
+              <button class="Ascdesc" id="Nameup" @click="nameAsc">
+                <i class="fa-solid fa-arrow-up"></i>
+              </button>
+              <button class="Ascdesc" id="Namedown" @click="nameDesc">
+                <i class="fa-solid fa-arrow-down"></i>
+              </button>
+              <br /><br />
+              Location:
+              <button class="Ascdesc" id="Locationup" @click="locationAsc">
+                <i class="fa-solid fa-arrow-up"></i>
+              </button>
+              <button class="Ascdesc" id="Locationdown" @click="locationDesc">
+                <i class="fa-solid fa-arrow-down"></i>
+              </button>
+              <br /><br />
+              Fee:
+              <button class="Ascdesc" id="Priceup" @click="priceAsc">
+                <i class="fa-solid fa-arrow-up"></i>
+              </button>
+              <button class="Ascdesc" id="Pricedown" @click="priceDesc">
+                <i class="fa-solid fa-arrow-down"></i>
+              </button>
+              <br /><br />
+              Teacher:
+              <button class="Ascdesc" id="Teacherup" @click="teacherAsc">
+                <i class="fa-solid fa-arrow-up"></i>
+              </button>
+              <button class="Ascdesc" id="Teacherdown" @click="teacherDesc">
+                <i class="fa-solid fa-arrow-down"></i>
+              </button>
+              <br /><br />
+              Availability:
+              <button class="Ascdesc" id="Spaceup" @click="spaceAsc">
+                <i class="fa-solid fa-arrow-up"></i>
+              </button>
+              <button class="Ascdesc" id="Spacedown" @click="spaceDesc">
+                <i class="fa-solid fa-arrow-down"></i>
+              </button>
+            </div>
+          </center>
+        </div>
+        <br />
       </div>
       <div id="Cartpage"></div>
       <div id="Checkoutpage"></div>
